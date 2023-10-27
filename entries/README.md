@@ -1,4 +1,4 @@
-# Daily Entries - My Developer Journey
+# Daily Entries
 
 Welcome to my collection of daily reflections and learnings. Each markdown file in this folder is a new page in my ongoing story of growth and development in the world of software engineering.
 
