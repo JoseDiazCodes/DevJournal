@@ -1,6 +1,8 @@
 # My Developer Journey
 
-Hello and welcome to my development journal. My name is [Your Name], and I am embarking on a journey to transform myself from a beginner to a proficient software engineer. This space is dedicated to documenting my daily progress, challenges, triumphs, and everything in between.
+Hello and welcome to my development journal. My name is Jose Diaz, and I am embarking on a journey to transform myself from a beginner to a proficient software engineer. This space is dedicated to documenting my daily progress, challenges, triumphs, and everything in between.
+
+### Start Date: November 1st 2023
 
 ## About This Blog
 
@@ -26,6 +28,3 @@ Feel free to browse through and read any entry that catches your eye!
 I’m open to feedback, advice, and any form of constructive criticism that can help me grow. If you wish to reach out, you can find me on the links I provided on my profile README.md
 
 Thank you for being a part of my journey!
-
-[Your Name]
-# DevJournal
