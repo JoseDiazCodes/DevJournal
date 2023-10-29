@@ -1,0 +1,51 @@
+name: Update Blog Posts on Profile Readme
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'DevJournal/entries/*.md'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout DevJournal Repository
+        uses: actions/checkout@v3
+        with:
+          repository: JoseDiazCodes/DevJournal
+          path: DevJournal
+
+      - name: Get Latest Blog Post
+        run: |
+          latest_post=$(ls -t DevJournal/entries/*.md | head -n 1)
+          latest_post_contents=$(cat "$latest_post")
+          latest_post_name=$(basename "$latest_post" .md)
+          echo "LATEST_POST_NAME=$latest_post_name" >> $GITHUB_ENV
+          echo "LATEST_POST_CONTENTS=\"$latest_post_contents\"" >> $GITHUB_ENV
+
+      - name: Checkout Profile README Repository
+        uses: actions/checkout@v3
+        with:
+          repository: JoseDiazCodes/JoseDiazCodes
+          token: ${{ secrets.PAT }}
+          path: profile-readme
+
+      - name: Update Profile README
+        run: |
+          latest_post_name=${LATEST_POST_NAME}
+          latest_post_contents=${LATEST_POST_CONTENTS}
+          cd profile-readme
+          sed -i "/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n## $latest_post_name\n$latest_post_contents\n<!-- BLOG-POST-LIST:END -->" README.md
+
+      - name: Push Changes
+        run: |
+          cd profile-readme
+          git config user.name "Jose Diaz"
+          git config user.email "josediazjr.a@gmail.com"
+          git add README.md
+          git commit -m "Update blog post list"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
