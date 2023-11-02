@@ -2,7 +2,7 @@
 
 Hello and welcome to my development journal. My name is Jose Diaz, and I am embarking on a journey to transform myself from a beginner to a proficient software engineer. This space is dedicated to documenting my daily progress, challenges, triumphs, and everything in between.
 
-### Start Date: November 1st 2023
+### Start Date: November 2nd 2023
 
 ## About This Blog
 
